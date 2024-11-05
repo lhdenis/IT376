@@ -1,5 +1,9 @@
-function validatePassword(password) {
-    
+const PASSWORD_MIN_LENGTH = 8;
 
-    return password.length >= 8 && /\d/.test(password) && /[a-z]/.test(password);
+function validatePassword(password) {
+    const isLenghtValid = password.length >= PASSWORD_MIN_LENGTH;
+    const hasDigit = /\d/.test(password);
+    const hasLetter = /[a-z]/.test(password);
+
+    return isLenghtValid && hasDigit && hasLetter;
 }
